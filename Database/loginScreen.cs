@@ -55,7 +55,11 @@ namespace Database
 
             if (table.Rows.Count > 0)
             {
-                if(perm == "Student")
+                MySqlDataReader dr = command.ExecuteReader();
+                dr.Read();
+                String perm = dr.GetValue(0).ToString();
+                dr.Close();
+                if (perm == "Student")
                 {
                     this.Hide();
                     StudentScreen std_screen = new StudentScreen();
