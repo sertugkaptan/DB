@@ -45,11 +45,6 @@ namespace Database
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
             db.openConnection();
-
-            MySqlDataReader dr = command.ExecuteReader();
-            dr.Read();
-            String perm = dr.GetValue(0).ToString();
-            dr.Close();
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
