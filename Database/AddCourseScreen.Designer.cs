@@ -33,14 +33,13 @@ namespace Database
             this.name_box = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.edit_btn = new System.Windows.Forms.Button();
-            this.add_btn = new System.Windows.Forms.Button();
-            this.del_btn = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.code_box = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.del_btn = new System.Windows.Forms.Button();
+            this.add_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -77,42 +76,6 @@ namespace Database
             this.dataGridView1.Size = new System.Drawing.Size(695, 403);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // edit_btn
-            // 
-            this.edit_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.edit_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.edit_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.edit_btn.Location = new System.Drawing.Point(108, 367);
-            this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(87, 23);
-            this.edit_btn.TabIndex = 9;
-            this.edit_btn.Text = "Edit";
-            this.edit_btn.UseVisualStyleBackColor = true;
-            // 
-            // add_btn
-            // 
-            this.add_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.add_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.add_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.add_btn.Location = new System.Drawing.Point(14, 367);
-            this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(87, 23);
-            this.add_btn.TabIndex = 8;
-            this.add_btn.Text = "Add";
-            this.add_btn.UseVisualStyleBackColor = true;
-            this.add_btn.Click += new System.EventHandler(this.add_btn_Click);
-            // 
-            // del_btn
-            // 
-            this.del_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.del_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.del_btn.Location = new System.Drawing.Point(58, 396);
-            this.del_btn.Name = "del_btn";
-            this.del_btn.Size = new System.Drawing.Size(87, 21);
-            this.del_btn.TabIndex = 10;
-            this.del_btn.Text = "Delete";
-            this.del_btn.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -157,6 +120,29 @@ namespace Database
             this.comboBox1.TabIndex = 16;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
+            // del_btn
+            // 
+            this.del_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.del_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.del_btn.Location = new System.Drawing.Point(38, 397);
+            this.del_btn.Name = "del_btn";
+            this.del_btn.Size = new System.Drawing.Size(122, 22);
+            this.del_btn.TabIndex = 18;
+            this.del_btn.Text = "Delete";
+            this.del_btn.UseVisualStyleBackColor = true;
+            // 
+            // add_btn
+            // 
+            this.add_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.add_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.add_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.add_btn.Location = new System.Drawing.Point(38, 371);
+            this.add_btn.Name = "add_btn";
+            this.add_btn.Size = new System.Drawing.Size(122, 20);
+            this.add_btn.TabIndex = 17;
+            this.add_btn.Text = "Add";
+            this.add_btn.UseVisualStyleBackColor = true;
+            // 
             // AddCourseScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
@@ -164,13 +150,12 @@ namespace Database
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(933, 450);
+            this.Controls.Add(this.del_btn);
+            this.Controls.Add(this.add_btn);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.code_box);
-            this.Controls.Add(this.del_btn);
-            this.Controls.Add(this.edit_btn);
-            this.Controls.Add(this.add_btn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.name_box);
@@ -190,12 +175,11 @@ namespace Database
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button edit_btn;
-        private System.Windows.Forms.Button add_btn;
-        private System.Windows.Forms.Button del_btn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox code_box;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button del_btn;
+        private System.Windows.Forms.Button add_btn;
     }
 }

@@ -49,7 +49,7 @@ namespace Database
             this.panel2.AutoSize = true;
             this.panel2.Location = new System.Drawing.Point(0, 95);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(841, 545);
+            this.panel2.Size = new System.Drawing.Size(841, 550);
             this.panel2.TabIndex = 1;
             // 
             // panel1
@@ -80,6 +80,7 @@ namespace Database
             this.button5.Size = new System.Drawing.Size(112, 87);
             this.button5.TabIndex = 6;
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button3
             // 
@@ -94,6 +95,7 @@ namespace Database
             this.button3.Size = new System.Drawing.Size(94, 86);
             this.button3.TabIndex = 5;
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button1
             // 
@@ -147,7 +149,7 @@ namespace Database
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(841, 640);
+            this.ClientSize = new System.Drawing.Size(841, 645);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;

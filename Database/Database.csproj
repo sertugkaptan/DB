@@ -65,6 +65,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddTeachingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTeachingScreen.Designer.cs">
+      <DependentUpon>AddTeachingScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddAdvisorScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAdvisorScreen.Designer.cs">
+      <DependentUpon>AddAdvisorScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddCourseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddTeachingScreen.resx">
+      <DependentUpon>AddTeachingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAdvisorScreen.resx">
+      <DependentUpon>AddAdvisorScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddCourseScreen.resx">
       <DependentUpon>AddCourseScreen.cs</DependentUpon>
     </EmbeddedResource>

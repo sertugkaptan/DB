@@ -17,6 +17,8 @@ namespace Database
         {
             InitializeComponent();
             populate();
+            fillCombo("department", dept_box, "name");
+            dept_box.SelectedIndex = 0;
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -33,18 +35,16 @@ namespace Database
             adapter.Fill(dt);
             dataGridView1.DataSource = dt;
         }
-
-        private void add_btn_Click(object sender, EventArgs e)
+        private void add_btn_Click_1(object sender, EventArgs e)
         {
-            if(checkEmptyFields())
+            if (checkEmptyFields())
             {
                 MessageBox.Show("Please fill all of the empty boxes", "Empty Fields", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
             String name = name_box.Text;
             String surname = surname_box.Text;
-            int country_id = int.Parse(country_id_box.Text);
-
+            String country_id = country_id_box.Text;
             int ins_id = int.Parse(ins_id_box.Text);
             String usn = usn_box.Text;
             String pass = pass_box.Text;
@@ -53,7 +53,7 @@ namespace Database
             MySqlCommand cmd = new MySqlCommand("INSERT INTO `instructor`(`ins_id`, `password`, `dept`, `username`, `name`, `surname`,`country_id`) VALUES (@ins_id, @pass, @dept, @usn, @name, @surn, @country_id)", db.getConnection());
             cmd.Parameters.Add("@usn", MySqlDbType.VarChar).Value = usn;
             cmd.Parameters.Add("@ins_id", MySqlDbType.Int32).Value = ins_id;
-            cmd.Parameters.Add("@country_id", MySqlDbType.Int32).Value = country_id;
+            cmd.Parameters.Add("@country_id", MySqlDbType.VarChar).Value = country_id;
             cmd.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
             cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
             cmd.Parameters.Add("@surn", MySqlDbType.VarChar).Value = surname;
@@ -63,13 +63,13 @@ namespace Database
 
             if (!checkEmptyFields())
             {
-                if(checkData(country_id_box,"instructor", "country_id"))
+                if (checkCountry())
                 {
                     MessageBox.Show("Citizen ID already registered!!");
                 }
                 else
                 {
-                    if(checkData(ins_id_box, "instructor", "ins_id"))
+                    if (checkData(ins_id_box, "instructor", "ins_id"))
                     {
                         MessageBox.Show("Instructor ID already registered!!");
                     }
@@ -92,6 +92,7 @@ namespace Database
             db.closeConnection();
 
         }
+
         public Boolean checkUsername()
         {
             DB db = new DB();
@@ -135,7 +136,26 @@ namespace Database
                 return false;
             }
         }
+        public Boolean checkCountry()
+        {
+            DB db = new DB();
+            DataTable table = new DataTable();
 
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `instructor` WHERE `country_id` = @usn", db.getConnection());
+            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = country_id_box.Text;
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public Boolean checkEmptyFields()
         {
             String name = name_box.Text;
@@ -151,6 +171,26 @@ namespace Database
                 return false;
 
         }
+        public void fillCombo(String table, ComboBox cb, String str)
+        {
+            try
+            {
+                DB db = new DB();
+                String selectQuery = "SELECT * FROM " + table;
+                db.openConnection();
+                MySqlCommand command = new MySqlCommand(selectQuery, db.getConnection());
+                MySqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    cb.Items.Add(reader.GetString(str));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
 
+        
     }
 }

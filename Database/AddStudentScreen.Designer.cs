@@ -42,13 +42,12 @@ namespace Database
             this.label7 = new System.Windows.Forms.Label();
             this.usn_box = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.dept_box = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.edit_btn = new System.Windows.Forms.Button();
             this.add_btn = new System.Windows.Forms.Button();
             this.del_btn = new System.Windows.Forms.Button();
             this.country_id_box = new System.Windows.Forms.TextBox();
+            this.dept_box = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -93,7 +92,7 @@ namespace Database
             this.surname_box.Location = new System.Drawing.Point(14, 97);
             this.surname_box.Name = "surname_box";
             this.surname_box.Size = new System.Drawing.Size(178, 22);
-            this.surname_box.TabIndex = 2;
+            this.surname_box.TabIndex = 1;
             // 
             // label3
             // 
@@ -184,14 +183,6 @@ namespace Database
             this.label8.TabIndex = 9;
             this.label8.Text = "Department";
             // 
-            // dept_box
-            // 
-            this.dept_box.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.dept_box.Location = new System.Drawing.Point(14, 235);
-            this.dept_box.Name = "dept_box";
-            this.dept_box.Size = new System.Drawing.Size(178, 22);
-            this.dept_box.TabIndex = 5;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -204,26 +195,14 @@ namespace Database
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // edit_btn
-            // 
-            this.edit_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.edit_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.edit_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.edit_btn.Location = new System.Drawing.Point(108, 367);
-            this.edit_btn.Name = "edit_btn";
-            this.edit_btn.Size = new System.Drawing.Size(87, 23);
-            this.edit_btn.TabIndex = 9;
-            this.edit_btn.Text = "Edit";
-            this.edit_btn.UseVisualStyleBackColor = true;
-            // 
             // add_btn
             // 
             this.add_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.add_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.add_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.add_btn.Location = new System.Drawing.Point(14, 367);
+            this.add_btn.Location = new System.Drawing.Point(44, 367);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(87, 23);
+            this.add_btn.Size = new System.Drawing.Size(119, 23);
             this.add_btn.TabIndex = 8;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = true;
@@ -233,9 +212,9 @@ namespace Database
             // 
             this.del_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.del_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.del_btn.Location = new System.Drawing.Point(58, 396);
+            this.del_btn.Location = new System.Drawing.Point(44, 396);
             this.del_btn.Name = "del_btn";
-            this.del_btn.Size = new System.Drawing.Size(87, 21);
+            this.del_btn.Size = new System.Drawing.Size(119, 22);
             this.del_btn.TabIndex = 10;
             this.del_btn.Text = "Delete";
             this.del_btn.UseVisualStyleBackColor = true;
@@ -246,7 +225,15 @@ namespace Database
             this.country_id_box.Location = new System.Drawing.Point(14, 145);
             this.country_id_box.Name = "country_id_box";
             this.country_id_box.Size = new System.Drawing.Size(178, 22);
-            this.country_id_box.TabIndex = 3;
+            this.country_id_box.TabIndex = 2;
+            // 
+            // dept_box
+            // 
+            this.dept_box.FormattingEnabled = true;
+            this.dept_box.Location = new System.Drawing.Point(14, 235);
+            this.dept_box.Name = "dept_box";
+            this.dept_box.Size = new System.Drawing.Size(181, 21);
+            this.dept_box.TabIndex = 5;
             // 
             // AddStudentScreen
             // 
@@ -255,9 +242,9 @@ namespace Database
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(933, 450);
+            this.Controls.Add(this.dept_box);
             this.Controls.Add(this.country_id_box);
             this.Controls.Add(this.del_btn);
-            this.Controls.Add(this.edit_btn);
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label6);
@@ -265,7 +252,6 @@ namespace Database
             this.Controls.Add(this.label7);
             this.Controls.Add(this.usn_box);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.dept_box);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.std_id_box);
             this.Controls.Add(this.label4);
@@ -297,12 +283,11 @@ namespace Database
         private System.Windows.Forms.TextBox pass_box;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox dept_box;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button edit_btn;
         private System.Windows.Forms.Button add_btn;
         private System.Windows.Forms.Button del_btn;
         private System.Windows.Forms.TextBox usn_box;
         private System.Windows.Forms.TextBox country_id_box;
+        private System.Windows.Forms.ComboBox dept_box;
     }
 }

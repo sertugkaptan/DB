@@ -43,5 +43,17 @@ namespace Database
             AddCourseScreen ais = new AddCourseScreen();
             getForm(ais);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            AddAdvisorScreen ais = new AddAdvisorScreen();
+            getForm(ais);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            AddTeachingScreen ais = new AddTeachingScreen();
+            getForm(ais);
+        }
     }
 }

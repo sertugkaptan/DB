@@ -62,3 +62,5 @@ D:\Fork\DB\Database\obj\Debug\Database.CoordinatorLogin.resources
 D:\Fork\DB\Database\obj\Debug\Database.AddInstructorScreen.resources
 D:\Fork\DB\Database\obj\Debug\Database.AddStudentScreen.resources
 D:\Fork\DB\Database\obj\Debug\Database.AddCourseScreen.resources
+D:\Fork\DB\Database\obj\Debug\Database.AddAdvisorScreen.resources
+D:\Fork\DB\Database\obj\Debug\Database.AddTeachingScreen.resources

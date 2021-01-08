@@ -1,7 +1,7 @@
 ﻿
 namespace Database
 {
-    partial class AddAdvisorScreen
+    partial class AddTeachingScreen
     {
         /// <summary>
         /// Required designer variable.
@@ -59,9 +59,9 @@ namespace Database
             this.add_btn.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.add_btn.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.add_btn.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.add_btn.Location = new System.Drawing.Point(45, 370);
+            this.add_btn.Location = new System.Drawing.Point(45, 366);
             this.add_btn.Name = "add_btn";
-            this.add_btn.Size = new System.Drawing.Size(122, 20);
+            this.add_btn.Size = new System.Drawing.Size(122, 24);
             this.add_btn.TabIndex = 8;
             this.add_btn.Text = "Add";
             this.add_btn.UseVisualStyleBackColor = true;
@@ -117,11 +117,11 @@ namespace Database
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label1.Location = new System.Drawing.Point(12, 83);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
+            this.label1.Size = new System.Drawing.Size(73, 13);
             this.label1.TabIndex = 17;
-            this.label1.Text = "Student ID";
+            this.label1.Text = "Course Code";
             // 
-            // AddAdvisorScreen
+            // AddTeachingScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -136,7 +136,7 @@ namespace Database
             this.Controls.Add(this.add_btn);
             this.Controls.Add(this.dataGridView1);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.Name = "AddAdvisorScreen";
+            this.Name = "AddTeachingScreen";
             this.Text = "AddAvisorScreen";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
