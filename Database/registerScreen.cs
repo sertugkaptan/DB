@@ -18,10 +18,7 @@ namespace Database
             InitializeComponent();
             password_box.UseSystemPasswordChar = true;
             confirmation_box.UseSystemPasswordChar = true;
-            perm_box.Items.Add("Student");
-            perm_box.Items.Add("Instructor");
-            perm_box.Items.Add("Coordinator");
-            perm_box.SelectedIndex = 0;
+           
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -32,14 +29,14 @@ namespace Database
         private void button1_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `user`(`Username`, `Password`, `Email`, `Permission`, `First_Name`, `Last_Name`) VALUES (@usn, @pass, @email, @perm, @fn, @ln)", db.getConnection());
+            MySqlCommand command = new MySqlCommand("INSERT INTO `user`(`sch_id`, `Password`, `Email`, `First_Name`, `Last_Name`) VALUES (@usn, @pass, @email, @fn, @ln)", db.getConnection());
 
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = usern_box.Text;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password_box.Text;
             command.Parameters.Add("@email", MySqlDbType.VarChar).Value = email_box.Text;
             command.Parameters.Add("@fn", MySqlDbType.VarChar).Value = first_name_box.Text;
             command.Parameters.Add("@ln", MySqlDbType.VarChar).Value = last_name_box.Text;
-            command.Parameters.Add("@perm", MySqlDbType.VarChar).Value = perm_box.Text;
+        
 
             db.openConnection();
             if (!checkEmptyFields())
@@ -88,7 +85,7 @@ namespace Database
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE `username` = @usn", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `user` WHERE `sch_id` = @usn", db.getConnection());
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
 
             adapter.SelectCommand = command;
@@ -140,11 +137,10 @@ namespace Database
             String username = usern_box.Text;
             String password = password_box.Text;
             String email = email_box.Text;
-            String perm = perm_box.Text;
             String fn = first_name_box.Text;
             String ln = last_name_box.Text;
 
-            if (username.Equals("Username") || password.Equals("Password") || email.Equals("Email") || fn.Equals("First_Name") || ln.Equals("Last_Name") || perm.Equals("Permission"))
+            if (username.Equals("") || password.Equals("") || email.Equals("") || fn.Equals("") || ln.Equals(""))
                 return true;
             else
                 return false;
@@ -154,7 +150,7 @@ namespace Database
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            loginScreen login_screen = new loginScreen();
+            CoordinatorLogin login_screen = new CoordinatorLogin();
             login_screen.Show();
         }
 

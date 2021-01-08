@@ -11,9 +11,9 @@ using MySql.Data.MySqlClient;
 
 namespace Database 
 {
-    public partial class loginScreen : Form
+    public partial class InstructorLogin : Form
     {
-        public loginScreen()
+        public InstructorLogin()
         {
             
             InitializeComponent();
@@ -41,37 +41,17 @@ namespace Database
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT Permission FROM `user` WHERE `username` = @usn AND `password` = @pass", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `instructor` WHERE `ins_id` = @usn AND `password` = @pass", db.getConnection());
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
             db.openConnection();
             adapter.SelectCommand = command;
             adapter.Fill(table);
-
             if (table.Rows.Count > 0)
             {
-                MySqlDataReader dr = command.ExecuteReader();
-                dr.Read();
-                String perm = dr.GetValue(0).ToString();
-                dr.Close();
-                if (perm == "Student")
-                {
-                    this.Hide();
-                    StudentScreen std_screen = new StudentScreen();
-                    std_screen.Show();
-                }
-                else if(perm == "Instructor")
-                {
-
-                }
-                else
-                {
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("User not found!! Please try different password or username");
+                this.Hide();
+                InstructorScreen ins_screen = new InstructorScreen();
+                ins_screen.Show();
             }
             db.closeConnection();
         }
@@ -82,6 +62,18 @@ namespace Database
             this.Hide();
             registerScreen register_form = new registerScreen();
             register_form.Show();
+        }
+
+        private void main_menu_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainScreen ms = new MainScreen();
+            ms.Show();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

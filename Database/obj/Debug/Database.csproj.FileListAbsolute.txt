@@ -26,3 +26,39 @@ D:\VS projects\Database\Database\obj\Debug\Database.csproj.CopyComplete
 D:\VS projects\Database\Database\obj\Debug\Database.loginScreen.resources
 D:\VS projects\Database\Database\obj\Debug\Database.registerScreen.resources
 D:\VS projects\Database\Database\obj\Debug\Database.StudentScreen.resources
+D:\Fork\DB\Database\bin\Debug\Database.exe.config
+D:\Fork\DB\Database\bin\Debug\Database.exe
+D:\Fork\DB\Database\bin\Debug\Database.pdb
+D:\Fork\DB\Database\bin\Debug\MySql.Data.dll
+D:\Fork\DB\Database\bin\Debug\Google.Protobuf.dll
+D:\Fork\DB\Database\bin\Debug\Zstandard.Net.dll
+D:\Fork\DB\Database\bin\Debug\K4os.Compression.LZ4.Streams.dll
+D:\Fork\DB\Database\bin\Debug\BouncyCastle.Crypto.dll
+D:\Fork\DB\Database\bin\Debug\Ubiety.Dns.Core.dll
+D:\Fork\DB\Database\bin\Debug\Renci.SshNet.dll
+D:\Fork\DB\Database\bin\Debug\System.Memory.dll
+D:\Fork\DB\Database\bin\Debug\System.Buffers.dll
+D:\Fork\DB\Database\bin\Debug\K4os.Compression.LZ4.dll
+D:\Fork\DB\Database\bin\Debug\K4os.Hash.xxHash.dll
+D:\Fork\DB\Database\bin\Debug\System.Numerics.Vectors.dll
+D:\Fork\DB\Database\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Fork\DB\Database\bin\Debug\MySql.Data.xml
+D:\Fork\DB\Database\obj\Debug\Database.csprojAssemblyReference.cache
+D:\Fork\DB\Database\obj\Debug\Database.exe.config
+D:\Fork\DB\Database\obj\Debug\Database.StudentScreen.resources
+D:\Fork\DB\Database\obj\Debug\Database.registerScreen.resources
+D:\Fork\DB\Database\obj\Debug\Database.Properties.Resources.resources
+D:\Fork\DB\Database\obj\Debug\Database.csproj.GenerateResource.cache
+D:\Fork\DB\Database\obj\Debug\Database.csproj.CoreCompileInputs.cache
+D:\Fork\DB\Database\obj\Debug\Database.csproj.CopyComplete
+D:\Fork\DB\Database\obj\Debug\Database.exe
+D:\Fork\DB\Database\obj\Debug\Database.pdb
+D:\Fork\DB\Database\obj\Debug\Database.CoordinatorScreen.resources
+D:\Fork\DB\Database\obj\Debug\Database.InstructorScreen.resources
+D:\Fork\DB\Database\obj\Debug\Database.MainScreen.resources
+D:\Fork\DB\Database\obj\Debug\Database.StudentLogin.resources
+D:\Fork\DB\Database\obj\Debug\Database.InstructorLogin.resources
+D:\Fork\DB\Database\obj\Debug\Database.CoordinatorLogin.resources
+D:\Fork\DB\Database\obj\Debug\Database.AddInstructorScreen.resources
+D:\Fork\DB\Database\obj\Debug\Database.AddStudentScreen.resources
+D:\Fork\DB\Database\obj\Debug\Database.AddCourseScreen.resources

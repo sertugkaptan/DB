@@ -65,12 +65,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DB.cs" />
-    <Compile Include="loginScreen.cs">
+    <Compile Include="AddCourseScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="loginScreen.Designer.cs">
-      <DependentUpon>loginScreen.cs</DependentUpon>
+    <Compile Include="AddCourseScreen.Designer.cs">
+      <DependentUpon>AddCourseScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddStudentScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddStudentScreen.Designer.cs">
+      <DependentUpon>AddStudentScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddInstructorScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddInstructorScreen.Designer.cs">
+      <DependentUpon>AddInstructorScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoordinatorScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoordinatorScreen.Designer.cs">
+      <DependentUpon>CoordinatorScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DB.cs" />
+    <Compile Include="StudentLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentLogin.Designer.cs">
+      <DependentUpon>StudentLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstructorLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstructorLogin.Designer.cs">
+      <DependentUpon>InstructorLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainScreen.Designer.cs">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InstructorScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InstructorScreen.Designer.cs">
+      <DependentUpon>InstructorScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoordinatorLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoordinatorLogin.Designer.cs">
+      <DependentUpon>CoordinatorLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="StudentScreen.cs">
       <SubType>Form</SubType>
@@ -86,8 +134,32 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="loginScreen.resx">
-      <DependentUpon>loginScreen.cs</DependentUpon>
+    <EmbeddedResource Include="AddCourseScreen.resx">
+      <DependentUpon>AddCourseScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddStudentScreen.resx">
+      <DependentUpon>AddStudentScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddInstructorScreen.resx">
+      <DependentUpon>AddInstructorScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoordinatorScreen.resx">
+      <DependentUpon>CoordinatorScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentLogin.resx">
+      <DependentUpon>StudentLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstructorLogin.resx">
+      <DependentUpon>InstructorLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainScreen.resx">
+      <DependentUpon>MainScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InstructorScreen.resx">
+      <DependentUpon>InstructorScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoordinatorLogin.resx">
+      <DependentUpon>CoordinatorLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StudentScreen.resx">
       <DependentUpon>StudentScreen.cs</DependentUpon>
@@ -103,6 +175,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -119,6 +192,9 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\indir.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
