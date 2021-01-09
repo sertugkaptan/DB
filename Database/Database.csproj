@@ -65,11 +65,47 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddCorseScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCorseScreen.Designer.cs">
+      <DependentUpon>AddCorseScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddTakingScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddTakingScreen.Designer.cs">
+      <DependentUpon>AddTakingScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CourseInfoScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CourseInfoScreen.Designer.cs">
+      <DependentUpon>CourseInfoScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AssignStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssignStudent.Designer.cs">
+      <DependentUpon>AssignStudent.cs</DependentUpon>
+    </Compile>
     <Compile Include="CourseTaught.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CourseTaught.Designer.cs">
       <DependentUpon>CourseTaught.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsLogin.Designer.cs">
+      <DependentUpon>InsLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsScreen.Designer.cs">
+      <DependentUpon>InsScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="UpdateScreen.cs">
       <SubType>Form</SubType>
@@ -89,12 +125,6 @@
     <Compile Include="AddAdvisorScreen.Designer.cs">
       <DependentUpon>AddAdvisorScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="AddCourseScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AddCourseScreen.Designer.cs">
-      <DependentUpon>AddCourseScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddStudentScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,12 +138,6 @@
       <DependentUpon>AddInstructorScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="User.cs" />
-    <Compile Include="InstructorScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InstructorScreen.Designer.cs">
-      <DependentUpon>InstructorScreen.cs</DependentUpon>
-    </Compile>
     <Compile Include="CoordinatorScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,12 +169,6 @@
     <Compile Include="StudentLogin.Designer.cs">
       <DependentUpon>StudentLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="InstructorLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="InstructorLogin.Designer.cs">
-      <DependentUpon>InstructorLogin.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,8 +195,26 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddCorseScreen.resx">
+      <DependentUpon>AddCorseScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddTakingScreen.resx">
+      <DependentUpon>AddTakingScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CourseInfoScreen.resx">
+      <DependentUpon>CourseInfoScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AssignStudent.resx">
+      <DependentUpon>AssignStudent.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CourseTaught.resx">
       <DependentUpon>CourseTaught.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsLogin.resx">
+      <DependentUpon>InsLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsScreen.resx">
+      <DependentUpon>InsScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UpdateScreen.resx">
       <DependentUpon>UpdateScreen.cs</DependentUpon>
@@ -189,17 +225,11 @@
     <EmbeddedResource Include="AddAdvisorScreen.resx">
       <DependentUpon>AddAdvisorScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="AddCourseScreen.resx">
-      <DependentUpon>AddCourseScreen.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddStudentScreen.resx">
       <DependentUpon>AddStudentScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AddInstructorScreen.resx">
       <DependentUpon>AddInstructorScreen.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InstructorScreen.resx">
-      <DependentUpon>InstructorScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CoordinatorScreen.resx">
       <DependentUpon>CoordinatorScreen.cs</DependentUpon>
@@ -215,9 +245,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="StudentLogin.resx">
       <DependentUpon>StudentLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="InstructorLogin.resx">
-      <DependentUpon>InstructorLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>

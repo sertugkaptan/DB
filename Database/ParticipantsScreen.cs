@@ -37,7 +37,7 @@ namespace Database
         private void ParticipantsScreen_Load(object sender, EventArgs e)
         {
             DB db = new DB();
-            string selectQuery = "SELECT *FROM taking WHERE std_id = '" + StudentLogin.username + "' ";
+            string selectQuery = "SELECT * FROM taking WHERE std_id = '" + User.usn + "' ";
             db.openConnection();
             MySqlCommand command = new MySqlCommand(selectQuery, db.getConnection());
             MySqlDataReader reader = command.ExecuteReader();

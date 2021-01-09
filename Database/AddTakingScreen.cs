@@ -11,13 +11,13 @@ using MySql.Data.MySqlClient;
 
 namespace Database
 {
-    public partial class AddTeachingScreen : Form
+    public partial class AddTakingScreen : Form
     {
-        public AddTeachingScreen()
+        public AddTakingScreen()
         {
             InitializeComponent();
             populate();
-            fillCombo("instructor",comboBox1,"ins_id");
+            fillCombo("student",comboBox1,"std_id");
             fillCombo("course",comboBox2, "code");
         }
 
@@ -29,7 +29,7 @@ namespace Database
         {
             DB db = new DB();
             db.openConnection();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM teaching t ",db.getConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM taking t ",db.getConnection());
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dataGridView1.DataSource = dt;
@@ -45,8 +45,8 @@ namespace Database
             int ins_id = int.Parse(comboBox1.Text);
             String crs_code = comboBox2.Text;
             DB db = new DB();
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO `teaching`(`ins_id`, `crs_code`) VALUES(@ins_id,@crs_code)", db.getConnection());
-            cmd.Parameters.Add("@ins_id", MySqlDbType.Int32).Value = ins_id;
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO `taking`(`std_id`, `crs_code`) VALUES(@std_id,@crs_code)", db.getConnection());
+            cmd.Parameters.Add("@std_id", MySqlDbType.Int32).Value = ins_id;
             cmd.Parameters.Add("@crs_code", MySqlDbType.VarChar).Value = crs_code;
 
             db.openConnection();
@@ -55,13 +55,13 @@ namespace Database
             {
                 if(checkCourse())
                 {
-                    MessageBox.Show("Course Already being taught", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    MessageBox.Show("Student Already Taking the course", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 }
                 else
                 {
                     if (cmd.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Instructor successfully assigned to lecture!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Student successfully assigned to lecture!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                         MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
@@ -82,8 +82,9 @@ namespace Database
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `teaching` WHERE `crs_code` = @usn", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `taking` WHERE `crs_code` = @usn AND `std_id` = @std_id ", db.getConnection());
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = comboBox2.Text;
+            command.Parameters.Add("@std_id", MySqlDbType.VarChar).Value = comboBox2.Text;
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
@@ -120,11 +121,11 @@ namespace Database
 
         public Boolean checkEmptyFields()
         {
-            String ins_id = comboBox1.Text;
+            String std_id = comboBox1.Text;
             String crs_code = comboBox2.Text;
    
 
-            if (ins_id.Equals("") || crs_code.Equals(""))
+            if (std_id.Equals("") || crs_code.Equals(""))
                 return true;
             else
                 return false;
@@ -157,8 +158,8 @@ namespace Database
         private void del_btn_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM `teaching` WHERE `ins_id` = @ins_id AND crs_code = @crs_code", db.getConnection());
-            cmd.Parameters.Add("@ins_id", MySqlDbType.VarChar).Value = comboBox1.Text;
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM `taking` WHERE `std_id` = @std_id AND crs_code = @crs_code", db.getConnection());
+            cmd.Parameters.Add("@std_id", MySqlDbType.VarChar).Value = comboBox1.Text;
             cmd.Parameters.Add("@crs_code", MySqlDbType.VarChar).Value = comboBox2.Text;
             db.openConnection();
             if (!checkEmptyFields())
@@ -167,7 +168,7 @@ namespace Database
                 {
                     if (cmd.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Lecture successfully deleted!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Student Succesfully taken off the course!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                         MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);

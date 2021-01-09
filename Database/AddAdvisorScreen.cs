@@ -159,7 +159,7 @@ namespace Database
             DB db = new DB();
             MySqlCommand cmd = new MySqlCommand("DELETE FROM `advisor` WHERE `ins_id` = @ins_id AND std_id = @std_id", db.getConnection());
             cmd.Parameters.Add("@ins_id", MySqlDbType.VarChar).Value = comboBox1.Text;
-            cmd.Parameters.Add("@std_code", MySqlDbType.VarChar).Value = comboBox2.Text;
+            cmd.Parameters.Add("@std_id", MySqlDbType.VarChar).Value = comboBox2.Text;
             db.openConnection();
             if (!checkEmptyFields())
             {

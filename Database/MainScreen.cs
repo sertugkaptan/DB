@@ -29,7 +29,7 @@ namespace Database
         private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
-            InstructorLogin ins_login = new InstructorLogin();
+            InsLogin ins_login = new InsLogin();
             ins_login.Show();
         }
 

@@ -1,7 +1,7 @@
 ﻿
 namespace Database
 {
-    partial class InstructorLogin
+    partial class InsLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@ namespace Database
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstructorLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InsLogin));
             this.panel1 = new System.Windows.Forms.Panel();
             this.main_menu_button = new System.Windows.Forms.Button();
             this.password_box = new System.Windows.Forms.TextBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.login_button = new System.Windows.Forms.Button();
+            this.submit_btn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.username_box = new System.Windows.Forms.TextBox();
@@ -51,15 +51,15 @@ namespace Database
             this.panel1.Controls.Add(this.main_menu_button);
             this.panel1.Controls.Add(this.password_box);
             this.panel1.Controls.Add(this.checkBox1);
-            this.panel1.Controls.Add(this.login_button);
+            this.panel1.Controls.Add(this.submit_btn);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.username_box);
             this.panel1.Controls.Add(this.Login);
-            this.panel1.Location = new System.Drawing.Point(226, 54);
+            this.panel1.Location = new System.Drawing.Point(173, 80);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(387, 405);
-            this.panel1.TabIndex = 0;
+            this.panel1.TabIndex = 1;
             // 
             // main_menu_button
             // 
@@ -74,7 +74,7 @@ namespace Database
             this.main_menu_button.TabIndex = 5;
             this.main_menu_button.Text = "Main Menu";
             this.main_menu_button.UseVisualStyleBackColor = false;
-            this.main_menu_button.Click += new System.EventHandler(this.main_menu_button_Click);
+            this.main_menu_button.Click += new System.EventHandler(this.main_menu_button_Click_1);
             // 
             // password_box
             // 
@@ -96,26 +96,25 @@ namespace Database
             this.checkBox1.TabIndex = 3;
             this.checkBox1.Text = "Show";
             this.checkBox1.UseVisualStyleBackColor = false;
-            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
-            // login_button
+            // submit_btn
             // 
-            this.login_button.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.login_button.BackColor = System.Drawing.Color.Transparent;
-            this.login_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.login_button.Cursor = System.Windows.Forms.Cursors.Default;
-            this.login_button.FlatAppearance.BorderSize = 0;
-            this.login_button.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.login_button.ForeColor = System.Drawing.SystemColors.Highlight;
-            this.login_button.Location = new System.Drawing.Point(136, 217);
-            this.login_button.Name = "login_button";
-            this.login_button.Size = new System.Drawing.Size(121, 38);
-            this.login_button.TabIndex = 4;
-            this.login_button.Text = "Submit";
-            this.login_button.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.login_button.UseMnemonic = false;
-            this.login_button.UseVisualStyleBackColor = false;
-            this.login_button.Click += new System.EventHandler(this.login_button_Click);
+            this.submit_btn.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.submit_btn.BackColor = System.Drawing.Color.Transparent;
+            this.submit_btn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.submit_btn.Cursor = System.Windows.Forms.Cursors.Default;
+            this.submit_btn.FlatAppearance.BorderSize = 0;
+            this.submit_btn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.submit_btn.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.submit_btn.Location = new System.Drawing.Point(136, 217);
+            this.submit_btn.Name = "submit_btn";
+            this.submit_btn.Size = new System.Drawing.Size(121, 38);
+            this.submit_btn.TabIndex = 4;
+            this.submit_btn.Text = "Submit";
+            this.submit_btn.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.submit_btn.UseMnemonic = false;
+            this.submit_btn.UseVisualStyleBackColor = false;
+            this.submit_btn.Click += new System.EventHandler(this.submit_btn_Click);
             // 
             // label3
             // 
@@ -144,7 +143,6 @@ namespace Database
             this.label2.Size = new System.Drawing.Size(86, 17);
             this.label2.TabIndex = 2;
             this.label2.Text = "Instructor ID";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // username_box
             // 
@@ -172,20 +170,16 @@ namespace Database
             this.Login.TabIndex = 0;
             this.Login.Text = "Instructor Login";
             this.Login.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Login.Click += new System.EventHandler(this.login_button_Click);
             // 
-            // InstructorLogin
+            // InsLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.AutoSize = true;
-            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(787, 551);
+            this.ClientSize = new System.Drawing.Size(733, 565);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Name = "InstructorLogin";
-            this.Text = "Login Screen";
+            this.Name = "InsLogin";
+            this.Text = "InsLogin";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -195,14 +189,13 @@ namespace Database
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label Login;
+        private System.Windows.Forms.Button main_menu_button;
+        private System.Windows.Forms.TextBox password_box;
         private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.Button login_button;
+        private System.Windows.Forms.Button submit_btn;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox username_box;
-        private System.Windows.Forms.TextBox password_box;
-        private System.Windows.Forms.Button main_menu_button;
+        private System.Windows.Forms.Label Login;
     }
 }
-

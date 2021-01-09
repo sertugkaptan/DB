@@ -18,6 +18,7 @@ namespace Database
         public StudentDetailsScreen()
         {
             InitializeComponent();
+            populate();
         }
 
         private void StudentDetailsScreen_Load(object sender, EventArgs e)
@@ -25,8 +26,7 @@ namespace Database
 
             DB db = new DB();
             db.openConnection();
-            textBox1.Text = StudentLogin.username;
-            string query = "SELECT* FROM `student` WHERE `std_id` = '" + textBox1.Text + "'";
+            string query = "SELECT* FROM `student` WHERE `std_id` = '" + User.usn + "'";
             MySqlCommand command = new MySqlCommand(query, db.getConnection());
             MySqlDataReader dr = command.ExecuteReader();
 
@@ -38,7 +38,7 @@ namespace Database
                 textBox4.Text = dr["dept"].ToString();
                 textBox5.Text = dr["country_id"].ToString();
                 textBox6.Text = dr["password"].ToString();
-
+                textBox7.Text = dr["username"].ToString();
             }
             db.closeConnection();
         }
@@ -69,6 +69,21 @@ namespace Database
                 MessageBox.Show(ex.Message);
             }
             db.closeConnection();
+
+        }
+        public void populate()
+        {
+            DB db = new DB();
+            db.openConnection();
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM student WHERE std_id = @std_id", db.getConnection());
+            adapter.SelectCommand.Parameters.Add("@std_id", MySqlDbType.VarChar).Value = textBox1.Text;
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+            dataGridView1.DataSource = dt;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }

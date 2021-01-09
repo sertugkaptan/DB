@@ -21,7 +21,6 @@ namespace Database
             InitializeComponent();
             password_box.UseSystemPasswordChar = true;
         }
-        public static String username;
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked == false)
@@ -37,13 +36,13 @@ namespace Database
         private void login_button_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            username = username_box.Text;
+            String username = username_box.Text;
             String password = password_box.Text;
 
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `student` WHERE `std_id` = @usn AND `password` = @pass", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `student` WHERE `username` = @usn AND `password` = @pass", db.getConnection());
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
             db.openConnection();
@@ -51,6 +50,7 @@ namespace Database
             adapter.Fill(table);
             if (table.Rows.Count > 0)
             {
+                User.usn = getID(username_box.Text);
                 this.Hide();
                 StudentScreen std_screen = new StudentScreen();
                 std_screen.Show();
@@ -68,6 +68,19 @@ namespace Database
             this.Hide();
             MainScreen mm = new MainScreen();
             mm.Show();
+        }
+        public String getID(String str)
+        {
+            String stri;
+            DB db = new DB();
+            db.openConnection();
+            MySqlCommand cmd = new MySqlCommand("SELECT std_id FROM student WHERE username =\"" + str + "\"", db.getConnection());
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            rdr.Read();
+            stri = rdr.GetString(0);
+            rdr.Close();
+            db.closeConnection();
+            return stri;
         }
     }
 }

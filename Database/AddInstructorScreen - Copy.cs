@@ -11,14 +11,14 @@ using MySql.Data.MySqlClient;
 
 namespace Database
 {
-    public partial class AddTeachingScreen : Form
+    public partial class AddInstructorScreen : Form
     {
-        public AddTeachingScreen()
+        public AddInstructorScreen()
         {
             InitializeComponent();
             populate();
-            fillCombo("instructor",comboBox1,"ins_id");
-            fillCombo("course",comboBox2, "code");
+            fillCombo("department", dept_box, "name");
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -29,43 +29,59 @@ namespace Database
         {
             DB db = new DB();
             db.openConnection();
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM teaching t ",db.getConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM instructor",db.getConnection());
+
             DataTable dt = new DataTable();
             adapter.Fill(dt);
             dataGridView1.DataSource = dt;
         }
-
-        private void add_btn_Click(object sender, EventArgs e)
+        private void add_btn_Click_1(object sender, EventArgs e)
         {
-            if(checkEmptyFields())
+            if (checkEmptyFields())
             {
                 MessageBox.Show("Please fill all of the empty boxes", "Empty Fields", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
                 return;
             }
-            int ins_id = int.Parse(comboBox1.Text);
-            String crs_code = comboBox2.Text;
+            String name = name_box.Text;
+            String surname = surname_box.Text;
+            String country_id = country_id_box.Text;
+            int ins_id = int.Parse(ins_id_box.Text);
+            String usn = usn_box.Text;
+            String pass = pass_box.Text;
+            String dept = dept_box.Text;
             DB db = new DB();
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO `teaching`(`ins_id`, `crs_code`) VALUES(@ins_id,@crs_code)", db.getConnection());
+            MySqlCommand cmd = new MySqlCommand("INSERT INTO `instructor`(`ins_id`, `password`, `dept`, `username`, `name`, `surname`,`country_id`) VALUES (@ins_id, @pass, @dept, @usn, @name, @surn, @country_id)", db.getConnection());
+            cmd.Parameters.Add("@usn", MySqlDbType.VarChar).Value = usn;
             cmd.Parameters.Add("@ins_id", MySqlDbType.Int32).Value = ins_id;
-            cmd.Parameters.Add("@crs_code", MySqlDbType.VarChar).Value = crs_code;
+            cmd.Parameters.Add("@country_id", MySqlDbType.VarChar).Value = country_id;
+            cmd.Parameters.Add("@pass", MySqlDbType.VarChar).Value = pass;
+            cmd.Parameters.Add("@name", MySqlDbType.VarChar).Value = name;
+            cmd.Parameters.Add("@surn", MySqlDbType.VarChar).Value = surname;
+            cmd.Parameters.Add("@dept", MySqlDbType.VarChar).Value = dept;
 
             db.openConnection();
 
             if (!checkEmptyFields())
             {
-                if(checkCourse())
+                if (checkCountry())
                 {
-                    MessageBox.Show("Course Already being taught", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    MessageBox.Show("Citizen ID already registered!!");
                 }
                 else
                 {
-                    if (cmd.ExecuteNonQuery() == 1)
+                    if (checkData(ins_id_box, "instructor", "ins_id"))
                     {
-                        MessageBox.Show("Instructor successfully assigned to lecture!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Instructor ID already registered!!");
                     }
                     else
-                        MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-
+                    {
+                        if (cmd.ExecuteNonQuery() == 1)
+                        {
+                            MessageBox.Show("Account successfully created!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                            MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -76,14 +92,17 @@ namespace Database
             db.closeConnection();
 
         }
-        public Boolean checkCourse()
+
+        public Boolean checkUsername()
         {
             DB db = new DB();
+            String username = usn_box.Text;
+
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `teaching` WHERE `crs_code` = @usn", db.getConnection());
-            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = comboBox2.Text;
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `instructor` WHERE `ins_id` = @usn", db.getConnection());
+            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
@@ -117,20 +136,42 @@ namespace Database
                 return false;
             }
         }
+        public Boolean checkCountry()
+        {
+            DB db = new DB();
+            DataTable table = new DataTable();
 
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `instructor` WHERE `country_id` = @usn", db.getConnection());
+            command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = country_id_box.Text;
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public Boolean checkEmptyFields()
         {
-            String ins_id = comboBox1.Text;
-            String crs_code = comboBox2.Text;
-   
+            String name = name_box.Text;
+            String surname = surname_box.Text;
+            String country_id = country_id_box.Text;
+            String ins_id = ins_id_box.Text;
+            String usn = usn_box.Text;
+            String pass = pass_box.Text;
 
-            if (ins_id.Equals("") || crs_code.Equals(""))
+            if (usn.Equals("") || pass.Equals("") || country_id.Equals("") || name.Equals("") || surname.Equals("") || ins_id.Equals(""))
                 return true;
             else
                 return false;
 
         }
-        public void fillCombo(String table,ComboBox cb,String str)
+        public void fillCombo(String table, ComboBox cb, String str)
         {
             try
             {
@@ -149,25 +190,20 @@ namespace Database
                 MessageBox.Show(ex.Message);
             }
         }
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
 
         private void del_btn_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            MySqlCommand cmd = new MySqlCommand("DELETE FROM `teaching` WHERE `ins_id` = @ins_id AND crs_code = @crs_code", db.getConnection());
-            cmd.Parameters.Add("@ins_id", MySqlDbType.VarChar).Value = comboBox1.Text;
-            cmd.Parameters.Add("@crs_code", MySqlDbType.VarChar).Value = comboBox2.Text;
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM `instructor` WHERE `ins_id` = @ins_id", db.getConnection());
+            cmd.Parameters.Add("@ins_id", MySqlDbType.VarChar).Value = ins_id_box.Text;
             db.openConnection();
             if (!checkEmptyFields())
             {
-                if(MessageBox.Show("Are you sure you want to delete", "Account", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you want to delete", "Account", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     if (cmd.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Lecture successfully deleted!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Instructor successfully deleted!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                         MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);

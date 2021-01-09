@@ -40,7 +40,7 @@ namespace Database
 
         private void button2_Click(object sender, EventArgs e)
         {
-            AddCourseScreen ais = new AddCourseScreen();
+            AddCorseScreen ais = new AddCorseScreen();
             getForm(ais);
         }
 
@@ -67,5 +67,7 @@ namespace Database
             MainScreen ms = new MainScreen();
             ms.Show();
         }
+
+
     }
 }

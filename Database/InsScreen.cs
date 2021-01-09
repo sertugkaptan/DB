@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Database
 {
-    public partial class InstructorScreen : Form
+    public partial class InsScreen : Form
     {
-        public InstructorScreen()
+        public InsScreen()
         {
             InitializeComponent();
         }
@@ -26,26 +26,36 @@ namespace Database
             frm.Show();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-        }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
             UpdateScreen ais = new UpdateScreen();
             getForm(ais);
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)
         {
             this.Hide();
             MainScreen ms = new MainScreen();
             ms.Show();
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            CourseTaught ct = new CourseTaught();
+            getForm(ct);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddTakingScreen ats = new AddTakingScreen();
+            getForm(ats);
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
-
+            CourseInfoScreen cis = new CourseInfoScreen();
+            getForm(cis);
         }
     }
 }
