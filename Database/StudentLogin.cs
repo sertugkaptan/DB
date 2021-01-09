@@ -11,14 +11,17 @@ using MySql.Data.MySqlClient;
 
 namespace Database 
 {
+   
     public partial class StudentLogin: Form
     {
+        
         public StudentLogin()
         {
+
             InitializeComponent();
             password_box.UseSystemPasswordChar = true;
         }
-
+        public static String username;
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked == false)
@@ -34,7 +37,7 @@ namespace Database
         private void login_button_Click(object sender, EventArgs e)
         {
             DB db = new DB();
-            String username = username_box.Text;
+            username = username_box.Text;
             String password = password_box.Text;
 
             DataTable table = new DataTable();

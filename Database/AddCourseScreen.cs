@@ -18,7 +18,7 @@ namespace Database
             InitializeComponent();
             populate();
             fillCombo();
-            comboBox1.SelectedIndex = 0;
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -30,7 +30,7 @@ namespace Database
             DB db = new DB();
             db.openConnection();
             String code = code_box.Text;
-            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM course c ",db.getConnection());
+            MySqlDataAdapter adapter = new MySqlDataAdapter("SELECT * FROM course  ",db.getConnection());
             adapter.SelectCommand.Parameters.Add("@code", MySqlDbType.VarChar).Value = code;
             DataTable dt = new DataTable();
             adapter.Fill(dt);

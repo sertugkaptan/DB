@@ -18,7 +18,7 @@ namespace Database
             InitializeComponent();
             populate();
             fillCombo("department", dept_box, "name");
-            dept_box.SelectedIndex = 0;
+           
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
