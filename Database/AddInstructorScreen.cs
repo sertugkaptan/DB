@@ -191,6 +191,30 @@ namespace Database
             }
         }
 
-        
+        private void del_btn_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM `instructor` WHERE `ins_id` = @ins_id", db.getConnection());
+            cmd.Parameters.Add("@ins_id", MySqlDbType.VarChar).Value = ins_id_box.Text;
+            db.openConnection();
+            if (!checkEmptyFields())
+            {
+                if (MessageBox.Show("Are you sure you want to delete", "Account", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Instructor successfully deleted!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all of the empty boxes", "Empty Fields", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            populate();
+            db.closeConnection();
+        }
     }
 }

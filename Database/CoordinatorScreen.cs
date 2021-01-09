@@ -55,5 +55,17 @@ namespace Database
             AddTeachingScreen ais = new AddTeachingScreen();
             getForm(ais);
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainScreen ms = new MainScreen();
+            ms.Show();
+        }
     }
 }

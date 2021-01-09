@@ -37,7 +37,7 @@ namespace Database
             dataGridView1.DataSource = dt;
         }
 
-        private void add_btn_Click(object sender, EventArgs e)
+        private void add_btn_Click_1(object sender, EventArgs e)
         {
             if(checkEmptyFields())
             {
@@ -157,5 +157,7 @@ namespace Database
         {
            
         }
+
+
     }
 }

@@ -15,7 +15,6 @@ namespace Database
     {
         public CoordinatorLogin()
         {
-            
             InitializeComponent();
             password_box.UseSystemPasswordChar = true;
         }

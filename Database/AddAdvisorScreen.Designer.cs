@@ -77,6 +77,7 @@ namespace Database
             this.del_btn.TabIndex = 10;
             this.del_btn.Text = "Delete";
             this.del_btn.UseVisualStyleBackColor = true;
+            this.del_btn.Click += new System.EventHandler(this.del_btn_Click);
             // 
             // label3
             // 

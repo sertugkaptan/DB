@@ -61,7 +61,7 @@ namespace Database
                 {
                     if (cmd.ExecuteNonQuery() == 1)
                     {
-                        MessageBox.Show("Advisor successfully Assigned!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Instructor successfully assigned to lecture!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                         MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
@@ -152,6 +152,33 @@ namespace Database
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
            
+        }
+
+        private void del_btn_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM `teaching` WHERE `ins_id` = @ins_id AND crs_code = @crs_code", db.getConnection());
+            cmd.Parameters.Add("@ins_id", MySqlDbType.VarChar).Value = comboBox1.Text;
+            cmd.Parameters.Add("@crs_code", MySqlDbType.VarChar).Value = comboBox2.Text;
+            db.openConnection();
+            if (!checkEmptyFields())
+            {
+                if(MessageBox.Show("Are you sure you want to delete", "Account", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Lecture successfully deleted!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all of the empty boxes", "Empty Fields", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            populate();
+            db.closeConnection();
         }
     }
 }

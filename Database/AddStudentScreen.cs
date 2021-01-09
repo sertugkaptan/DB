@@ -191,5 +191,32 @@ namespace Database
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void del_btn_Click(object sender, EventArgs e)
+        {
+            DB db = new DB();
+            db.openConnection();
+            MySqlCommand cmd = new MySqlCommand("DELETE FROM `student` WHERE `std_id` = @std_id ", db.getConnection());
+            cmd.Parameters.Add("@std_id", MySqlDbType.VarChar).Value = std_id_box.Text;
+            
+            if (!checkEmptyFields())
+            {
+                if (MessageBox.Show("Are you sure you want to delete", "Account", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (cmd.ExecuteNonQuery() == 1)
+                    {
+                        MessageBox.Show("Student successfully assigned to lecture!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill all of the empty boxes", "Empty Fields", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+            }
+            populate();
+            db.closeConnection();
+        }
     }
 }

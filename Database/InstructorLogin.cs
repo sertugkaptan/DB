@@ -41,7 +41,7 @@ namespace Database
             DataTable table = new DataTable();
 
             MySqlDataAdapter adapter = new MySqlDataAdapter();
-            MySqlCommand command = new MySqlCommand("SELECT * FROM `instructor` WHERE `ins_id` = @usn AND `password` = @pass", db.getConnection());
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `instructor` WHERE `username` = @usn AND `password` = @pass", db.getConnection());
             command.Parameters.Add("@usn", MySqlDbType.VarChar).Value = username;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = password;
             db.openConnection();
@@ -49,6 +49,7 @@ namespace Database
             adapter.Fill(table);
             if (table.Rows.Count > 0)
             {
+                User.usn = getID(username_box.Text);
                 this.Hide();
                 InstructorScreen ins_screen = new InstructorScreen();
                 ins_screen.Show();
@@ -74,6 +75,19 @@ namespace Database
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+        public String getID(String str)
+        {
+            String stri;
+            DB db = new DB();
+            db.openConnection();
+            MySqlCommand cmd = new MySqlCommand("SELECT ins_id FROM instructor WHERE username =\"" + str +"\"" ,db.getConnection());
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            rdr.Read();
+            stri = rdr.GetString(0);
+            rdr.Close();
+            db.closeConnection();
+            return stri;
         }
     }
 }
