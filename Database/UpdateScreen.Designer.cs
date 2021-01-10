@@ -53,7 +53,7 @@ namespace Database
             this.name_box.Location = new System.Drawing.Point(10, 112);
             this.name_box.Name = "name_box";
             this.name_box.ReadOnly = true;
-            this.name_box.Size = new System.Drawing.Size(178, 22);
+            this.name_box.Size = new System.Drawing.Size(178, 26);
             this.name_box.TabIndex = 0;
             // 
             // label1
@@ -65,7 +65,7 @@ namespace Database
             this.label1.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label1.Location = new System.Drawing.Point(12, 96);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 13);
+            this.label1.Size = new System.Drawing.Size(49, 19);
             this.label1.TabIndex = 1;
             this.label1.Text = "Name";
             // 
@@ -77,6 +77,7 @@ namespace Database
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(224, 35);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(695, 403);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -90,7 +91,7 @@ namespace Database
             this.Password.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.Password.Location = new System.Drawing.Point(9, 189);
             this.Password.Name = "Password";
-            this.Password.Size = new System.Drawing.Size(59, 13);
+            this.Password.Size = new System.Drawing.Size(76, 19);
             this.Password.TabIndex = 13;
             this.Password.Text = "Username";
             // 
@@ -99,7 +100,7 @@ namespace Database
             this.usn_box.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.usn_box.Location = new System.Drawing.Point(9, 205);
             this.usn_box.Name = "usn_box";
-            this.usn_box.Size = new System.Drawing.Size(178, 22);
+            this.usn_box.Size = new System.Drawing.Size(178, 26);
             this.usn_box.TabIndex = 12;
             // 
             // label3
@@ -111,7 +112,7 @@ namespace Database
             this.label3.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label3.Location = new System.Drawing.Point(9, 237);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.Size = new System.Drawing.Size(73, 19);
             this.label3.TabIndex = 15;
             this.label3.Text = "Password";
             // 
@@ -137,7 +138,7 @@ namespace Database
             this.label4.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label4.Location = new System.Drawing.Point(12, 44);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 13);
+            this.label4.Size = new System.Drawing.Size(91, 19);
             this.label4.TabIndex = 20;
             this.label4.Text = "Instructor ID";
             // 
@@ -147,7 +148,7 @@ namespace Database
             this.ins_id_box.Location = new System.Drawing.Point(10, 60);
             this.ins_id_box.Name = "ins_id_box";
             this.ins_id_box.ReadOnly = true;
-            this.ins_id_box.Size = new System.Drawing.Size(178, 22);
+            this.ins_id_box.Size = new System.Drawing.Size(178, 26);
             this.ins_id_box.TabIndex = 19;
             // 
             // label5
@@ -159,7 +160,7 @@ namespace Database
             this.label5.ForeColor = System.Drawing.SystemColors.AppWorkspace;
             this.label5.Location = new System.Drawing.Point(10, 143);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
+            this.label5.Size = new System.Drawing.Size(68, 19);
             this.label5.TabIndex = 22;
             this.label5.Text = "Surname";
             // 
@@ -169,7 +170,7 @@ namespace Database
             this.surname_box.Location = new System.Drawing.Point(8, 159);
             this.surname_box.Name = "surname_box";
             this.surname_box.ReadOnly = true;
-            this.surname_box.Size = new System.Drawing.Size(178, 22);
+            this.surname_box.Size = new System.Drawing.Size(178, 26);
             this.surname_box.TabIndex = 21;
             // 
             // pass_box
@@ -177,12 +178,12 @@ namespace Database
             this.pass_box.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.pass_box.Location = new System.Drawing.Point(8, 253);
             this.pass_box.Name = "pass_box";
-            this.pass_box.Size = new System.Drawing.Size(178, 22);
+            this.pass_box.Size = new System.Drawing.Size(178, 26);
             this.pass_box.TabIndex = 23;
             // 
             // UpdateScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
@@ -201,7 +202,7 @@ namespace Database
             this.Controls.Add(this.name_box);
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Name = "UpdateScreen";
-            this.Text = "AddInstructorScreen";
+            this.Text = "UpdateScreen";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);

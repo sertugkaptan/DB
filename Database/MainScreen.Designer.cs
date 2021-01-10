@@ -48,9 +48,10 @@ namespace Database
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.button3);
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Location = new System.Drawing.Point(117, 47);
+            this.panel1.Location = new System.Drawing.Point(156, 58);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(381, 443);
+            this.panel1.Size = new System.Drawing.Size(508, 545);
             this.panel1.TabIndex = 0;
             // 
             // Login
@@ -63,9 +64,10 @@ namespace Database
             this.Login.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.Login.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.Login.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Login.Location = new System.Drawing.Point(130, 25);
+            this.Login.Location = new System.Drawing.Point(173, 31);
+            this.Login.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(126, 30);
+            this.Login.Size = new System.Drawing.Size(162, 37);
             this.Login.TabIndex = 17;
             this.Login.Text = "Main Menu";
             this.Login.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -79,9 +81,10 @@ namespace Database
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(56, 325);
+            this.button4.Location = new System.Drawing.Point(75, 400);
+            this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(275, 60);
+            this.button4.Size = new System.Drawing.Size(367, 74);
             this.button4.TabIndex = 4;
             this.button4.Text = "Register as coordiantor";
             this.button4.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
@@ -96,9 +99,10 @@ namespace Database
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button1.Location = new System.Drawing.Point(56, 84);
+            this.button1.Location = new System.Drawing.Point(75, 103);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(275, 56);
+            this.button1.Size = new System.Drawing.Size(367, 69);
             this.button1.TabIndex = 1;
             this.button1.Text = "Coordinator Login";
             this.button1.UseVisualStyleBackColor = false;
@@ -111,9 +115,10 @@ namespace Database
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button3.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button3.Location = new System.Drawing.Point(56, 163);
+            this.button3.Location = new System.Drawing.Point(75, 201);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(275, 56);
+            this.button3.Size = new System.Drawing.Size(367, 69);
             this.button3.TabIndex = 2;
             this.button3.Text = "Instructor Login";
             this.button3.UseVisualStyleBackColor = false;
@@ -126,9 +131,10 @@ namespace Database
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button2.Location = new System.Drawing.Point(56, 246);
+            this.button2.Location = new System.Drawing.Point(75, 303);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(275, 56);
+            this.button2.Size = new System.Drawing.Size(367, 69);
             this.button2.TabIndex = 3;
             this.button2.Text = "Student Login";
             this.button2.UseVisualStyleBackColor = false;
@@ -136,13 +142,14 @@ namespace Database
             // 
             // MainScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
-            this.ClientSize = new System.Drawing.Size(647, 532);
+            this.ClientSize = new System.Drawing.Size(863, 655);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "MainScreen";
-            this.Text = "Form1";
+            this.Text = "Main Screen";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -117,19 +117,12 @@ namespace Database
 
             if (!checkEmptyFields())
             {
-                if (checkUsername())
+                if (cmd.ExecuteNonQuery() == 1)
                 {
-                    MessageBox.Show("Username already exist please change it", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
+                    MessageBox.Show("Personal details succesfully updated!!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
-                {
-                    if (cmd.ExecuteNonQuery() ==  1)
-                    {
-                        MessageBox.Show("Personal details succesfully updated!!!", "Account", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                        MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
-                }
+                    MessageBox.Show("Unexpected Error has occured", "Error", MessageBoxButtons.OKCancel, MessageBoxIcon.Error);
             }
             else
             {
